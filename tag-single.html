@@ -446,7 +446,11 @@
 
 <!-- JS Plugins -->
 <script src="plugins/jquery/jquery.min.js"></script>
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script>
+  let script = document.createElement('script');
+  script.src = "plugins/bootstrap/bootstrap.min.js";
+  document.body.append(script); // (*)
+</script>
 <script src="plugins/lightense/lightense.min.js"></script>
 
 <!-- Main Script -->
