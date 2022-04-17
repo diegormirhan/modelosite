@@ -4,8 +4,11 @@ ErrorDocument 404 /404-page.html
 
 # 2 ---- Prevent directory file listing in all of your folder ----
 
-IndexIgnore *
+Options -Indexes
 
 # 3 ---- Make pages render without their extension ----
 
-Options +MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC, L]
